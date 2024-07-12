@@ -71,5 +71,7 @@ export const HeaderTop = styled.div`
 `
 
 
-export const HeaderMid = styled.div``
+export const HeaderMid = styled.div`
+    padding:17px 0;
+`
 export const Navbar = styled.nav``

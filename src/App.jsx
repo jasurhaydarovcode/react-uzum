@@ -8,6 +8,7 @@ import Favourite from './pages/Favourite'
 import Faq from './pages/Faq'
 import DeliveryPoints from './pages/DeliveryPoints'
 import Orders from './pages/Orders'
+import NotFound from './pages/NotFound'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/faq' element={<Faq />} />
           <Route path='/delivery-points' element={<DeliveryPoints />} />
           <Route path='/orders' element={<Orders />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
