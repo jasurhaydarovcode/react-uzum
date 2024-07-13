@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HeaderTop, HeaderMid, Navbar } from "./style";
 import { Link } from 'react-router-dom';
+import NavbarModal from '../NavbarModal';
 
 
-let navbarItems = [
+export let navbarItems = [
     {
         id: 1,
         title: "Yozgi savdo",
@@ -67,7 +68,8 @@ let navbarItems = [
 ]
 
 const Header = () => {
-    let location = ["Asaka"]
+    let location = ["Asaka"];
+    const [openModal, setOpenModal] = useState(false);
     return (
         <header>
 
@@ -111,10 +113,9 @@ const Header = () => {
             {/* HEADER TOP END */}
 
 
-            <div className="container">
-
-                {/* HEADER MID START */}
-                <HeaderMid>
+            {/* HEADER MID START */}
+            <HeaderMid>
+                <div className="container header__mid-wrapper">
                     {/* HEADER MID LEFT  START*/}
                     <div className='header__mid--left'>
                         {/* LOGO  START */}
@@ -150,8 +151,8 @@ const Header = () => {
                     <div className="header__mid--center">
 
                         {/* CATALOG BTN START */}
-                        <button>
-                            <i className="fa-solid fa-bars"></i>
+                        <button onClick={() => setOpenModal(!openModal)}>
+                            {openModal ? <i className='fa-solid fa-close'></i> : <i className='fa-solid fa-bars'></i>}
                             <span>Katalog</span>
                         </button>
                         {/* CATALOG BTN START */}
@@ -200,10 +201,12 @@ const Header = () => {
                     </div>
                     {/* HEADER RIGHT END */}
                     {/*  RIGHT ICONS */}
-                </HeaderMid>
-                {/* HEADER MID END */}
+                </div>
+            </HeaderMid>
+            {/* HEADER MID END */}
 
-                <Navbar>
+            <Navbar>
+                <div className="container">
                     <ol className='navbar__list'>
                         {
                             navbarItems.map((item) => {
@@ -225,8 +228,10 @@ const Header = () => {
                             </button>
                         </li>
                     </ol>
-                </Navbar>
-            </div>
+                </div>
+
+                {openModal ? <NavbarModal /> : ""}
+            </Navbar>
         </header>
     )
 }

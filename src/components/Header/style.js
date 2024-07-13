@@ -76,8 +76,12 @@ export const HeaderTop = styled.div`
 
 export const HeaderMid = styled.div`
     padding: 17px 0px;
-    display:flex;
-    align-items:center;
+
+    .header__mid-wrapper {
+        display:flex;
+        align-items:center;
+    }
+
 
     .header__mid--left {
         margin-right: 50px; 
@@ -154,7 +158,9 @@ export const HeaderMid = styled.div`
 
 `
 export const Navbar = styled.nav`
-padding: 0px 0px 50px 0px;
+    position:relative;
+    padding: 0px 0px 50px 0px;
+
     .navbar__list {
         display:flex;
         align-items:center;
