@@ -1,31 +1,68 @@
-import React from 'react'
+import React from 'react';
 import { HeaderTop, HeaderMid, Navbar } from "./style";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 let navbarItems = [
     {
         id: 1,
         title: "Yozgi savdo",
-        link: "categoriy/1",
+        link: "category/1",
         image: "https://static.uzum.uz/fast_categories/%D0%A7%D0%B8%D0%BB%D0%BB%D1%8F.png",
     },
     {
         id: 2,
         title: "Uyda salqinlik",
-        link: "categoriy/2",
+        link: "category/2",
         image: "https://static.uzum.uz/fast_categories/coldinhouse.png",
     },
     {
         id: 3,
         title: "Hovuzlar",
-        link: "categoriy/3",
+        link: "category/3",
         image: "https://static.uzum.uz/fast_categories/bas.png",
     },
     {
         id: 4,
         title: "Hammasi avto uchun",
-        link: "categoriy/3",
+        link: "category/4",
         image: "https://static.uzum.uz/fast_categories/auto_products.png",
+    },
+    {
+        id: 5,
+        title: "Elektronika ",
+        link: "category/5",
+        image: "https://static.uzum.uz/fast_categories/coldinhouse.png",
+    },
+    {
+        id: 6,
+        title: "Maishiy texnika ",
+        link: "category/6",
+        image: "https://static.uzum.uz/fast_categories/coldinhouse.png",
+    },
+    {
+        id: 7,
+        title: "Kiyim ",
+        link: "category/7",
+        image: "https://static.uzum.uz/fast_categories/coldinhouse.png",
+    },
+    {
+        id: 8,
+        title: " Poyabzallar ",
+        link: "category/8",
+        image: "https://static.uzum.uz/fast_categories/coldinhouse.png",
+    },
+    {
+        id: 9,
+        title: " Aksessuarlar ",
+        link: "category/9",
+        image: "https://static.uzum.uz/fast_categories/coldinhouse.png",
+    },
+    {
+        id: 10,
+        title: "  Go`zallik va parvarish ",
+        link: "category/10",
+        image: "https://static.uzum.uz/fast_categories/coldinhouse.png",
     },
 ]
 
@@ -33,36 +70,40 @@ const Header = () => {
     let location = ["Asaka"]
     return (
         <header>
+
             {/* HEADER TOP START */}
             <HeaderTop>
                 <div className="container header__top--inner">
                     {/* HEADER TOP LEFT START */}
                     <div className='header__top--left'>
                         <button className='header__top--left-btn'>
-                            <i className='fa-solid fa-location-dot'></i>
-                            <p className='header__top--left-desc'>Shahar: <b>{location[0]}</b></p>
+                            <i className="fa-solid fa-location-dot"></i>
+                            <p className='header__top--left-description'>Shahar: <span> {location[0]}</span></p>
                         </button>
 
                         <div className="header__top--left-inner">
                             <Link to={"/delivery-point"}>Topshirish punktlari</Link>
                         </div>
                     </div>
-                    {/* HEADER TOP LEFT END */}
+                    {/* HEADER TOP LEFT START */}
+
 
                     {/* HEADER TOP RIGHT START */}
-                    <div className="header__top--right">
-                        <a className='header__top--right-link' target='_blank' href="https://seller.uzum.uz/?utm_source=uzum&utm_medium=web&utm_campaign=header_link">Uzumda soting</a>
+                    <div className='header__top--right'>
+                        <a className='header__top--right-link' target='_blank' href="https://seller.uzum.uz/?utm_source=uzum&utm_medium=web&utm_campaign=header_link">
+                            Uzumda soting
+                        </a>
                         <Link to={"/faq"}>Savol-javoblar</Link>
-                        <Link to={"/orders"}>Buyurtmalar</Link>
+                        <Link to={"/orders"}>Buyurtmalarim</Link>
 
-                        {/* LANGUAGE START */}
+                        {/* LANGUAGE  START */}
                         <form>
                             <select value="language">
-                                <option name="uz" id="uz">O`zbekcha</option>
-                                <option name="ru" id="ru ">Ruscha</option>
+                                <option name="uzb" id="uzb">O'zbekcha</option>
+                                <option name="rus" id="rus">Ruscha</option>
                             </select>
                         </form>
-                        {/* LANGUAGE END */}
+                        {/* LANGUAGE END*/}
                     </div>
                     {/* HEADER TOP RIGHT END */}
                 </div>
@@ -74,12 +115,11 @@ const Header = () => {
 
                 {/* HEADER MID START */}
                 <HeaderMid>
-
-                    {/* HEADER MID LEFT */}
-                    <div className='header__mid-left'>
-                        {/* LOGO */}
+                    {/* HEADER MID LEFT  START*/}
+                    <div className='header__mid--left'>
+                        {/* LOGO  START */}
                         <Link className='header__mid--left-logo' to={"/"}>
-                            <svg data-v-78b875fc="" width="24" height="24" viewBox="0 0 215 32" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Uzum" class="ui-icon  logo">
+                            <svg data-v-78b875fc="" height="32" viewBox="0 0 215 32" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Uzum" class="ui-icon  logo">
                                 <rect width="31.9764" height="31.9764" rx="15.9882" fill="#FFFF00"></rect>
                                 <path d="M3.75192 14.7933C3.27969 12.1152 3.04358 10.7761 3.38441 9.66131C3.68421 8.68069 4.28676 7.82017 5.1057 7.20306C6.0367 6.50149 7.37576 6.26538 10.0539 5.79316L18.144 4.36665C20.8221 3.89442 22.1612 3.65831 23.276 3.99914C24.2566 4.29894 25.1171 4.90149 25.7342 5.72043C26.4358 6.65143 26.6719 7.99049 27.1441 10.6686L28.2537 16.9611C28.7259 19.6393 28.962 20.9783 28.6212 22.0931C28.3214 23.0737 27.7188 23.9343 26.8999 24.5514C25.9689 25.2529 24.6298 25.489 21.9517 25.9613L13.8616 27.3878C11.1835 27.86 9.84441 28.0961 8.72961 27.7553C7.749 27.4555 6.88847 26.8529 6.27136 26.034C5.5698 25.103 5.33368 23.7639 4.86146 21.0858L3.75192 14.7933Z" fill="#7000FF"></path>
                                 <path d="M20.5487 11.0839C21.0311 11.1901 21.4979 11.2808 21.9559 11.398C22.4426 11.5219 22.9249 11.6724 23.4072 11.8073C23.4758 11.8272 23.5024 11.8538 23.5024 11.9312C23.5001 13.4379 23.5156 14.9468 23.4957 16.4535C23.4736 18.073 22.9625 19.5376 21.978 20.8252C20.8806 22.2611 19.4447 23.1859 17.6881 23.6063C16.9956 23.7722 16.2898 23.8275 15.5796 23.7855C13.8915 23.6859 12.3959 23.0908 11.1171 21.9868C9.79849 20.8518 8.96661 19.4226 8.63253 17.7101C8.5374 17.2234 8.49979 16.73 8.49979 16.2344C8.49757 14.8074 8.49979 13.3826 8.49536 11.9556C8.49536 11.8604 8.52634 11.8272 8.61262 11.8007C9.533 11.5064 10.4711 11.2741 11.4202 11.1016C11.4291 11.0993 11.4379 11.1016 11.46 11.0993C11.46 11.137 11.46 11.1746 11.46 11.21C11.46 12.9998 11.4534 14.7919 11.4645 16.5818C11.4711 17.4845 11.5928 18.3761 11.9003 19.2323C12.1437 19.9115 12.5043 20.5177 13.0419 21.0089C13.5464 21.4669 14.1371 21.7567 14.7986 21.8983C15.7345 22.0996 16.6681 22.0841 17.5863 21.7943C18.6704 21.4536 19.4226 20.7323 19.9049 19.7168C20.1638 19.1748 20.3187 18.5995 20.416 18.0088C20.5244 17.3517 20.551 16.688 20.551 16.0242C20.551 14.4269 20.551 12.8273 20.551 11.2299C20.5487 11.1878 20.5487 11.148 20.5487 11.0839Z" fill="white"></path>
@@ -101,68 +141,91 @@ const Header = () => {
                                 <path d="M106.286 9.39484C103.905 9.39484 102.108 10.3617 101.216 11.8361C100.31 10.3617 98.3414 9.39484 96.2969 9.39484C92.2766 9.39484 90.1841 11.9527 90.1841 15.1208V22.6983H93.9437V15.6489C93.9437 14.1334 94.7395 12.803 96.5645 12.803C96.935 12.7824 97.3054 12.8373 97.6553 12.9676C98.0052 13.0979 98.3208 13.3036 98.5815 13.571C98.8422 13.8316 99.048 14.1539 99.1784 14.5037C99.3088 14.8534 99.3636 15.2237 99.3431 15.594V22.6983H103.103V15.594C103.103 14.0785 103.995 12.803 105.799 12.803C107.603 12.803 108.475 14.1334 108.475 15.6489V22.6983H112.234V15.1277C112.234 11.9664 110.293 9.40169 106.252 9.40169L106.286 9.39484Z" fill="#7000FF"></path>
                                 <path d="M52.1966 16.4854C52.1966 18.5564 51.0235 19.5164 49.2946 19.5164C47.5657 19.5164 46.4062 18.577 46.4062 16.4854V9.64166H42.6466V16.6157C42.6466 21.1622 46.4337 22.9383 49.3083 22.9383C52.1829 22.9383 55.9631 21.1554 55.9631 16.6157V9.64166H52.2035L52.1966 16.4854Z" fill="#7000FF"></path>
                             </svg>
+                            {/* LOGO END */}
                         </Link>
-                        {/* LOGO END */}
                     </div>
-                    {/* HEADER MID LEFT END */}
+                    {/* HEADER MID LEFT  END*/}
 
-                    {/* HEADER MID CENTER START */}
-                    <div className="header__mid-center">
+                    {/* HEADER MID CENTER  START */}
+                    <div className="header__mid--center">
 
                         {/* CATALOG BTN START */}
                         <button>
-                            <i className='fa-solid fa-bars'></i>
+                            <i className="fa-solid fa-bars"></i>
                             <span>Katalog</span>
                         </button>
-                        {/* CATALOG BTN END */}
+                        {/* CATALOG BTN START */}
 
 
 
-                        {/* SEARCH PLACE START*/}
+                        {/* SEARCH PLACE  START*/}
                         <form>
-                            <input type="search" />
-                            <i className='fa-solid fa-magnifying-glass'></i>
+                            <input type="search" placeholder='Mahsulotlar va turkumlar izlash' />
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </form>
-                        {/* SEARCH PLACE END*/}
+                        {/* SEARCH PLACE END */}
+
                     </div>
                     {/* HEADER MID CENTER END */}
 
 
-
                     {/* HEADER RIGHT START */}
                     <div className="header__mid--right">
-                        <ul className='header_mid--right-list'>
-
+                        <ul className='header__mid--right-list'>
                             {/* #1 */}
-                            <li className='header__mid-right-item'>
+                            <li className='header__mid--right-item'>
                                 <Link to={"/"}>
-                                    <i className='fa-regular fa-user'></i>
+                                    <i class="fa-regular fa-user"></i>
                                     <span>Kirish</span>
                                 </Link>
                             </li>
 
                             {/* #2 */}
-                            <li className='header__mid-right-item'>
-                                <Link to={"/favoruite"}>
-                                    <i className='fa-regular fa-heart'></i>
+                            <li className='header__mid--right-item'>
+                                <Link to={"/favourite"}>
+                                    <i class="fa-regular fa-heart"></i>
                                     <span>Saralanganlar</span>
                                 </Link>
                             </li>
 
+
                             {/* #3 */}
-                            <li className='header__mid-right-item'>
+                            <li className='header__mid--right-item'>
                                 <Link to={"/cart"}>
-                                    <i className='fa-solid fa-bag-shopping'></i>
+                                    <i class="fa-solid fa-bag-shopping"></i>
                                     <span>Savat</span>
                                 </Link>
                             </li>
                         </ul>
                     </div>
                     {/* HEADER RIGHT END */}
+                    {/*  RIGHT ICONS */}
                 </HeaderMid>
                 {/* HEADER MID END */}
 
-                <Navbar>Navbar</Navbar>
+                <Navbar>
+                    <ol className='navbar__list'>
+                        {
+                            navbarItems.map((item) => {
+                                return (
+                                    <li key={item.id}>
+                                        <Link to={item.link}>
+                                            <img src={item.image} alt={item.title} width={"24px"} height={"24px"} />
+                                            <h5>{item.title}</h5>
+                                        </Link>
+                                    </li>
+                                )
+                            })
+                        }
+
+                        <li>
+                            <button className='navbar__list--item-btn'>
+                                <span>Yana</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </li>
+                    </ol>
+                </Navbar>
             </div>
         </header>
     )
