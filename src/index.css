@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,3 +16,21 @@ a {
   color: #000;
   text-decoration: none;
 }
+
+
+/* START SPLIDE CARUSEL STYLES */
+.splide {
+  padding: 0;
+}
+
+.splide__slide {
+  img {
+    border-radius: 10px;
+  }
+}
+
+.splide__track {
+  border-radius: 10px;
+}
+
+/* END SPLIDE CARUSEL STYLES */

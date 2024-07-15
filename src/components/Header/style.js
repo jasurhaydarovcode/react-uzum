@@ -159,7 +159,7 @@ export const HeaderMid = styled.div`
 `
 export const Navbar = styled.nav`
     position:relative;
-    padding: 0px 0px 50px 0px;
+    padding: 0px 0px 20px 0px;
 
     .navbar__list {
         display:flex;
